@@ -1,13 +1,24 @@
-# Rosewood
+# Jacarandá
+
+**Jacarandá** is a personal fork of the [Rosewood Game Engine](https://github.com/dovker/Rosewood), originally created by Dovydas Vaičiukynas.  
+The purpose of this fork is purely educational — mainly to study the *Deferred pseudo-3D rendering* example, which emulates a lighting system similar to the one used in the game [Eastward](https://www.indiedb.com/games/eastward/images/lighting-test).
+
+I recently started studying computer graphics and I am a complete beginner in the field. This project serves as a playground for experimentation and learning.
+
+The name **Jacarandá** is the Portuguese translation of *Rosewood*.
+
+---
+
+## Rosewood
 Rosewood Game Engine
 
 **Rosewood Engine** is a game engine created for me to learn Graphics Programming and to learn how Game Engines work
 
-# Plan
+## Plan
 !! THIS GAME ENGINE IS NO LONGER BEING DEVELOPED OR SUPPORTED !!
 My plan for this engine is to develop it to a point I can make an advanced 2D game and a simple 3D game with it, whilst learning Game Engine development, Design patterns, graphics programming, Advanced c++, problem solving.
 
-# Features
+## Features
 * OpenGL Support
 * Cross-Platform (Tested on major desktop platforms)
 * 2D Rendering
@@ -19,21 +30,21 @@ My plan for this engine is to develop it to a point I can make an advanced 2D ga
 * Basic Networking
 
 
-# Screenshots
+## Screenshots
 
-## Lua Scripting demonstration
+### Lua Scripting demonstration
 All the characters seen on this demonstration are being controled via a Lua Script
 
 https://user-images.githubusercontent.com/29017432/184543662-437f4487-839a-4301-a8f8-e27e1b23cb56.mov
 
-## Deferred pseudo-3D rendering
+### Deferred pseudo-3D rendering
 What you're seeing here is an orthographic projection of 3D paper-fold like objects being lit by a deferred lighting system, emulating a lighting system seen on Eastward
 
 https://user-images.githubusercontent.com/29017432/184543668-893c5b6c-a754-4dc0-b502-7ff17cbf1a63.mov
 
 
 
-# Building
+## Building
 ## All Platforms
   1. If you try to make project and it fails, make sure every dependency has it's premake5.lua file, if not, you can find those files in **"vendor/premakes"** folder.
   2. **IMPORTANT!** Make sure to compile OpenSSL in the **"Rosewood/vendor/openssl"** directory as a Static Library (Using **"no-shared"** option).
@@ -56,7 +67,7 @@ https://user-images.githubusercontent.com/29017432/184543668-893c5b6c-a754-4dc0-
   4. Press **Build** and **Run**
 ### **[Trello board](https://trello.com/b/bTRVKkrL/rosewood-engine)**
 
-# Libraries used
+## Libraries used
 * [Dear ImGui for debug UI](https://github.com/ocornut/imgui)
 * [GLFW for window context creation](https://github.com/glfw/glfw)
 * [glm for Vector maths](https://github.com/g-truc/glm)
