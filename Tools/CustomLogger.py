@@ -20,26 +20,32 @@ class Logger:
 
         dpg.add_input_text(label="Filter", callback=lambda sender: dpg.set_value(self.filter_id, dpg.get_value(sender)), 
                     parent=self.window_id, width=300)
-        self.child_id = dpg.add_child(parent=self.window_id, autosize_x=True, autosize_y=True)
+        self.child_id = dpg.add_child_window(parent=self.window_id, autosize_x=True, autosize_y=True)
         self.filter_id = dpg.add_filter_set(parent=self.child_id)
 
         with dpg.theme() as self.trace_theme:
-            dpg.add_theme_color(dpg.mvThemeCol_Text, (255, 255, 255, 255))
+            with dpg.theme_component(dpg.mvAll):
+                dpg.add_theme_color(dpg.mvThemeCol_Text, (255, 255, 255, 255))
 
         with dpg.theme() as self.tool_theme:
-            dpg.add_theme_color(dpg.mvThemeCol_Text, (64, 128, 255, 255))
+            with dpg.theme_component(dpg.mvAll):
+                dpg.add_theme_color(dpg.mvThemeCol_Text, (64, 128, 255, 255))
 
         with dpg.theme() as self.info_theme:
-            dpg.add_theme_color(dpg.mvThemeCol_Text, (0, 255, 0, 255))
+            with dpg.theme_component(dpg.mvAll):
+                dpg.add_theme_color(dpg.mvThemeCol_Text, (0, 255, 0, 255))
 
         with dpg.theme() as self.warning_theme:
-            dpg.add_theme_color(dpg.mvThemeCol_Text, (255, 255, 0, 255))
+            with dpg.theme_component(dpg.mvAll):
+                dpg.add_theme_color(dpg.mvThemeCol_Text, (255, 255, 0, 255))
 
         with dpg.theme() as self.error_theme:
-            dpg.add_theme_color(dpg.mvThemeCol_Text, (255, 0, 0, 255))
+            with dpg.theme_component(dpg.mvAll):
+                dpg.add_theme_color(dpg.mvThemeCol_Text, (255, 0, 0, 255))
 
         with dpg.theme() as self.critical_theme:
-            dpg.add_theme_color(dpg.mvThemeCol_Text, (200, 0, 20, 255))
+            with dpg.theme_component(dpg.mvAll):
+                dpg.add_theme_color(dpg.mvThemeCol_Text, (200, 0, 20, 255))
 
     def auto_scroll(self, value):
         self._auto_scroll = value
@@ -76,7 +82,7 @@ class Logger:
             theme = self.critical_theme
 
         new_log = dpg.add_text(message, parent=self.filter_id, filter_key=message, wrap=400)
-        dpg.set_item_theme(new_log, theme)
+        dpg.bind_item_theme(new_log, theme)  # Changed from set_item_theme
         if self._auto_scroll:
             scroll_max = dpg.get_y_scroll_max(self.child_id)
             dpg.set_y_scroll(self.child_id, -1.0)
